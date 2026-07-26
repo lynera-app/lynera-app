@@ -1,11 +1,11 @@
-# Lynera v10 spacing refinement
+# Lynera v11 update
 
-This release only adjusts the four spacing areas requested on the Home screen:
+This update only adjusts the Home-screen geometry requested in the latest review:
 
-- Side timeline labels are 20% closer to their endpoint markers.
-- The centre Today label is 27% closer to the centre marker.
-- The date-to-timeline group spacing is reduced by 15%.
-- The lake-to-check-in gap is reduced by approximately 50%, while retaining the lake reflection.
-- The PWA cache is updated to `lynera-v10`.
+- reduces the gap between the centre `Today` label and its marker;
+- moves the timeline group upward relative to the large date;
+- shifts the aurora image upward so the mountain/lake horizon appears between the arc and confidence pill;
+- halves the remaining gap between the confidence pill and the daily check-in card;
+- increments the offline cache to `lynera-v11`.
 
-No data model, prediction, calendar, privacy, export, or logging behaviour was changed.
+No prediction, logging, calendar, privacy, export, or IndexedDB behavior was changed.

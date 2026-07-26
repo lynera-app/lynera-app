@@ -600,3 +600,46 @@ body{background:#050713}
     margin-top:29px;
   }
 }
+
+/* Lynera focused home spacing refinement v11 */
+.pattern-hero{
+  min-height:590px;
+  background-position:center 58%;
+}
+.hero-today{
+  margin-bottom:18px;
+}
+.timeline-stage{
+  margin-top:-28px;
+}
+.timeline-label-center{
+  top:93px;
+}
+.hero-confidence{
+  margin-top:26px;
+}
+.home-content{
+  padding-top:4px;
+}
+
+@media(max-width:520px){
+  .pattern-hero{
+    min-height:570px;
+    background-position:center 60%;
+  }
+  .hero-today{
+    margin-bottom:18px;
+  }
+  .timeline-stage{
+    margin-top:-28px;
+  }
+  .timeline-label-center{
+    top:90px;
+  }
+  .hero-confidence{
+    margin-top:24px;
+  }
+  .home-content{
+    padding-top:3px;
+  }
+}

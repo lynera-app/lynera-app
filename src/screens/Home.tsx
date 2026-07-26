@@ -8,12 +8,9 @@ function formatRange(start: string, end: string) {
     : `${formatDate(start, { day: 'numeric', month: 'short' })} – ${formatDate(end, { day: 'numeric', month: 'short' })}`;
 }
 
-export function Home({logs,prediction,onLog,onOpenCalendar}:{logs:DailyPmsLog[];prediction:PredictionResult;onLog:(d:string,v?:PmsLogValue)=>void;onOpenCalendar:()=>void}){
-  const today=todayLocal();
-  const current=logs.find(l=>l.date===today)?.value;
-  const lastCluster=prediction.clusters[prediction.clusters.length - 1];
-  const lastLabel=lastCluster ? formatRange(lastCluster.start,lastCluster.end) : 'No entries yet';
-  const nextLabel=prediction.status==='prediction' ? formatRange(prediction.predictedStart!,prediction.predictedEnd!) : 'More history needed';
+function confidenceLabel(value: PredictionResult['confidence']) {
+  return value === 'insufficient' ? 'Insufficient' : value.charAt(0).toUpperCase() + value.slice(1);
+}
 
 export function Home({
   logs,

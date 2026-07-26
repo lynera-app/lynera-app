@@ -449,3 +449,117 @@ body{background:#050713}
     font-size:1.8rem;
   }
 }
+
+/* Lynera calendar-sheet and final home alignment refinement v9 */
+.topbar{
+  padding-top:calc(env(safe-area-inset-top) + 18px);
+  padding-bottom:12px;
+}
+.brand{
+  gap:15px;
+}
+.brand img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  border-radius:0;
+  box-shadow:none;
+  filter:drop-shadow(0 0 12px rgba(130,112,255,.34));
+}
+.pattern-hero{
+  min-height:760px;
+  background-position:center 48%;
+  background-size:cover;
+}
+.pattern-content{
+  padding-top:42px;
+  padding-bottom:36px;
+}
+.hero-kicker{
+  margin-bottom:34px;
+}
+.hero-today{
+  margin-bottom:38px;
+}
+.timeline-stage{
+  padding-top:96px;
+}
+.timeline-label-left,
+.timeline-label-right{
+  top:112px;
+}
+.timeline-label-center{
+  top:62px;
+}
+.pattern-arc{
+  margin-top:0;
+}
+.hero-confidence{
+  margin:32px auto 0;
+}
+.home-content{
+  padding-top:18px;
+}
+.sheet-backdrop{
+  z-index:220;
+  padding-top:calc(env(safe-area-inset-top) + 10px);
+  overflow:hidden;
+  overscroll-behavior:none;
+}
+.sheet{
+  max-height:calc(100dvh - env(safe-area-inset-top) - 18px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:calc(34px + env(safe-area-inset-bottom));
+  touch-action:pan-y;
+}
+
+@media(max-width:520px){
+  .topbar{
+    padding-top:calc(env(safe-area-inset-top) + 17px);
+    padding-bottom:11px;
+  }
+  .brand img{
+    width:48px;
+    height:48px;
+  }
+  .pattern-hero{
+    min-height:730px;
+    background-position:center 48%;
+  }
+  .pattern-content{
+    padding:38px 18px 32px;
+  }
+  .hero-kicker{
+    margin-bottom:31px;
+  }
+  .hero-today{
+    margin-bottom:35px;
+  }
+  .timeline-stage{
+    padding-top:92px;
+  }
+  .timeline-label-left,
+  .timeline-label-right{
+    top:106px;
+  }
+  .timeline-label-center{
+    top:59px;
+  }
+  .hero-confidence{
+    margin-top:29px;
+  }
+  .home-content{
+    padding-top:16px;
+  }
+  .sheet-backdrop{
+    align-items:end;
+  }
+  .sheet{
+    width:100%;
+    max-height:calc(100dvh - env(safe-area-inset-top) - 10px);
+    border-radius:26px 26px 0 0;
+    padding-bottom:calc(38px + env(safe-area-inset-bottom));
+  }
+}

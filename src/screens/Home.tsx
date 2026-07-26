@@ -70,23 +70,23 @@ export function Home({
                   <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
-              <path className="arc-base" d="M110 182 Q350 -5 590 182" />
+              <path className="arc-base" d="M126 184 Q350 10 574 184" />
               <g className="arc-extension-dots arc-extension-dots-left">
-                <circle cx="76" cy="211" r="3.2" />
-                <circle cx="86" cy="202" r="3.2" />
-                <circle cx="96" cy="193" r="3.2" />
-                <circle cx="106" cy="184" r="3.2" />
+                <circle cx="113" cy="195" r="3.2" />
+                <circle cx="101" cy="205" r="3.2" />
+                <circle cx="89" cy="215" r="3.2" />
+                <circle cx="77" cy="225" r="3.2" />
               </g>
               <g className="arc-extension-dots arc-extension-dots-right">
-                <circle cx="594" cy="184" r="3.2" />
-                <circle cx="604" cy="193" r="3.2" />
-                <circle cx="614" cy="202" r="3.2" />
-                <circle cx="624" cy="211" r="3.2" />
+                <circle cx="587" cy="195" r="3.2" />
+                <circle cx="599" cy="205" r="3.2" />
+                <circle cx="611" cy="215" r="3.2" />
+                <circle cx="623" cy="225" r="3.2" />
               </g>
-              <circle className="arc-marker arc-marker-left" cx="64" cy="222" r="9" />
-              <circle className="arc-marker arc-marker-right" cx="636" cy="222" r="9" />
-              <circle className="arc-today-halo" cx="350" cy="89" r="20" />
-              <circle className="arc-today" cx="350" cy="89" r="11" filter="url(#todayGlow)" />
+              <circle className="arc-marker arc-marker-left" cx="64" cy="236" r="9" />
+              <circle className="arc-marker arc-marker-right" cx="636" cy="236" r="9" />
+              <circle className="arc-today-halo" cx="350" cy="97" r="20" />
+              <circle className="arc-today" cx="350" cy="97" r="11" filter="url(#todayGlow)" />
             </svg>
           </div>
 

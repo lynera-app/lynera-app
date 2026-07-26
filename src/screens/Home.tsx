@@ -11,7 +11,7 @@ function formatRange(start: string, end: string) {
 export function Home({logs,prediction,onLog,onOpenCalendar}:{logs:DailyPmsLog[];prediction:PredictionResult;onLog:(d:string,v?:PmsLogValue)=>void;onOpenCalendar:()=>void}){
   const today=todayLocal();
   const current=logs.find(l=>l.date===today)?.value;
-  const lastCluster=prediction.clusters.at(-1);
+  const lastCluster=prediction.clusters[prediction.clusters.length - 1];
   const lastLabel=lastCluster ? formatRange(lastCluster.start,lastCluster.end) : 'No entries yet';
   const nextLabel=prediction.status==='prediction' ? formatRange(prediction.predictedStart!,prediction.predictedEnd!) : 'More history needed';
 

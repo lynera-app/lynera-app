@@ -1,0 +1,18 @@
+{
+  "name": "Lynera",
+  "short_name": "Lynera",
+  "description": "Private, on-device recurring PMS-like symptom pattern tracking.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080a18",
+  "theme_color": "#080a18",
+  "orientation": "portrait-primary",
+  "categories": ["health", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

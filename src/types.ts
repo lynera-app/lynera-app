@@ -1,0 +1,21 @@
+export type PmsLogValue = 'pms' | 'no_pms';
+export type DailyPmsLog = { date: string; value: PmsLogValue; createdAt: string; updatedAt: string };
+export type PmsCluster = { start: string; end: string; durationDays: number };
+export type ConfidenceLevel = 'insufficient' | 'low' | 'moderate' | 'high';
+export type PredictionResult = {
+  status: 'prediction' | 'insufficient_data' | 'unstable_pattern';
+  confidence: ConfidenceLevel;
+  reliability: number;
+  historyStart: string;
+  historyEnd: string;
+  historyDays: number;
+  clusterCount: number;
+  clusters: PmsCluster[];
+  totalPmsDays: number;
+  typicalClusterDuration: number | null;
+  typicalInterval: number | null;
+  intervalRange: [number, number] | null;
+  predictedStart: string | null;
+  predictedEnd: string | null;
+  explanation: string;
+};

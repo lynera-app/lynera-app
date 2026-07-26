@@ -40,7 +40,8 @@ body{background:#050713}
 .timeline-label-left strong{color:#c29bff}.timeline-label-right strong{color:#80c9ff}
 .pattern-arc{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 12px 22px rgba(1,2,10,.55))}
 .arc-base{fill:none;stroke:url(#arcGradient);stroke-width:7;stroke-linecap:round}
-.arc-extension{fill:none;stroke:url(#arcGradient);stroke-width:6;stroke-linecap:round;stroke-dasharray:2 14}
+.arc-extension-dots circle{fill:url(#arcGradient);filter:drop-shadow(0 0 5px rgba(168,118,255,.38))}
+.arc-extension-dots-right circle{filter:drop-shadow(0 0 5px rgba(105,200,255,.38))}
 .arc-marker{stroke:#e8e8ff;stroke-width:2.5}.arc-marker-left{fill:#a775ff}.arc-marker-right{fill:#6ac4ff}
 .arc-today-halo{fill:rgba(255,255,255,.16)}.arc-today{fill:#fff;stroke:#ddd9ff;stroke-width:3}
 .hero-explainer{max-width:590px;margin:-10px auto 0;color:#e0e4f2;font-size:.93rem;line-height:1.6;text-shadow:0 3px 18px rgba(0,0,0,.92)}
@@ -114,7 +115,7 @@ body{background:#050713}
   min-height:600px;
   background-image:
     linear-gradient(180deg,rgba(4,6,22,.35) 0%,rgba(4,6,22,.12) 38%,rgba(4,6,22,.34) 73%,#050713 100%),
-    url('/assets/aurora-home.webp');
+    var(--aurora-image);
   background-size:cover;
   background-position:center top;
   background-repeat:no-repeat;
@@ -144,7 +145,7 @@ body{background:#050713}
 .timeline-label-center strong{font-size:.98rem;color:#fff}
 .pattern-arc{margin-top:2px}
 .arc-base{stroke-width:7.5}
-.arc-extension{stroke-width:6.5;stroke-dasharray:2 14}
+.arc-extension-dots circle{r:4px}
 .arc-marker{stroke-width:3}
 .arc-today-halo{fill:rgba(255,255,255,.18)}
 .hero-explainer{margin:-6px auto 0;max-width:620px;font-size:.97rem;color:#f0f2fb;text-shadow:0 4px 18px rgba(0,0,0,.98)}

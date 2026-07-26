@@ -1,5 +1,7 @@
+import type { CSSProperties } from 'react';
 import type { DailyPmsLog, PmsLogValue, PredictionResult } from '../types';
 import { formatDate, todayLocal } from '../lib/date';
+import auroraHome from '../assets/aurora-home.png';
 
 function formatRange(start: string, end: string) {
   const sameMonth = start.slice(0, 7) === end.slice(0, 7);
@@ -32,7 +34,7 @@ export function Home({
 
   return (
     <main className="home-screen">
-      <section className="pattern-hero" aria-labelledby="pattern-overview-title">
+      <section className="pattern-hero" style={{ '--aurora-image': `url(${auroraHome})` } as CSSProperties} aria-labelledby="pattern-overview-title">
         <div className="pattern-content">
           <p className="hero-kicker" id="pattern-overview-title">Your pattern overview</p>
 
@@ -59,7 +61,7 @@ export function Home({
 
             <svg className="pattern-arc" viewBox="0 0 700 260" role="img" aria-hidden="true">
               <defs>
-                <linearGradient id="arcGradient" x1="0" y1="0" x2="1" y2="0">
+                <linearGradient id="arcGradient" gradientUnits="userSpaceOnUse" x1="50" y1="0" x2="650" y2="0">
                   <stop offset="0" stopColor="#a876ff" />
                   <stop offset="0.5" stopColor="#f0edff" />
                   <stop offset="1" stopColor="#69c8ff" />
@@ -69,13 +71,23 @@ export function Home({
                   <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
-              <path className="arc-extension" d="M50 222 L98 182" />
               <path className="arc-base" d="M98 182 Q350 -10 602 182" />
-              <path className="arc-extension" d="M602 182 L650 222" />
+              <g className="arc-extension-dots arc-extension-dots-left">
+                <circle cx="58" cy="216" r="3.8" />
+                <circle cx="69" cy="207" r="3.8" />
+                <circle cx="80" cy="198" r="3.8" />
+                <circle cx="91" cy="189" r="3.8" />
+              </g>
+              <g className="arc-extension-dots arc-extension-dots-right">
+                <circle cx="609" cy="189" r="3.8" />
+                <circle cx="620" cy="198" r="3.8" />
+                <circle cx="631" cy="207" r="3.8" />
+                <circle cx="642" cy="216" r="3.8" />
+              </g>
               <circle className="arc-marker arc-marker-left" cx="50" cy="222" r="10" />
               <circle className="arc-marker arc-marker-right" cx="650" cy="222" r="10" />
-              <circle className="arc-today-halo" cx="350" cy="47" r="27" />
-              <circle className="arc-today" cx="350" cy="47" r="14" filter="url(#todayGlow)" />
+              <circle className="arc-today-halo" cx="350" cy="86" r="27" />
+              <circle className="arc-today" cx="350" cy="86" r="14" filter="url(#todayGlow)" />
             </svg>
           </div>
 

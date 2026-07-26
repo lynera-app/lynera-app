@@ -89,3 +89,89 @@ body{background:#050713}
   .timeline-label span{font-size:.64rem}.timeline-label strong{font-size:.9rem}
   .today-controls button{font-size:.86rem}
 }
+
+/* Lynera home refinement v3 */
+.app-shell::before{
+  content:"";
+  position:fixed;
+  z-index:100;
+  top:0;
+  left:0;
+  right:0;
+  height:max(env(safe-area-inset-top),12px);
+  background:#060817;
+  pointer-events:none;
+}
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:90;
+  background:rgba(6,8,23,.985);
+  border-bottom:1px solid rgba(110,121,172,.12);
+  box-shadow:0 8px 28px rgba(0,0,0,.2);
+}
+.pattern-hero{
+  min-height:600px;
+  background-image:
+    linear-gradient(180deg,rgba(4,6,22,.35) 0%,rgba(4,6,22,.12) 38%,rgba(4,6,22,.34) 73%,#050713 100%),
+    url('/assets/aurora-home.webp');
+  background-size:cover;
+  background-position:center top;
+  background-repeat:no-repeat;
+}
+.pattern-hero::before{
+  inset:0;
+  background:radial-gradient(ellipse at center 45%,transparent 0 40%,rgba(2,4,15,.16) 72%,rgba(2,4,15,.48) 100%);
+  filter:none;
+  opacity:1;
+  transform:none;
+}
+.pattern-hero::after{
+  background:linear-gradient(180deg,rgba(2,4,16,.08),rgba(2,4,16,.04) 46%,rgba(2,4,16,.3) 78%,#050713 100%);
+}
+.aurora-layer{display:none}
+.pattern-content{padding-top:38px;padding-bottom:32px}
+.hero-kicker{margin-bottom:24px;color:#d9d2ff;text-shadow:0 3px 16px rgba(0,0,0,.85)}
+.hero-today{margin-bottom:12px}
+.hero-today span,.hero-today strong{text-shadow:0 4px 22px rgba(0,0,0,.9)}
+.timeline-stage{padding-top:100px;margin-top:2px}
+.timeline-label{top:22px;width:29%;text-shadow:0 4px 18px rgba(0,0,0,.95)}
+.timeline-label-left{left:0;text-align:left;align-items:start}
+.timeline-label-center{left:35%;width:30%;top:22px;text-align:center;align-items:center}
+.timeline-label-right{right:0;text-align:right;align-items:end}
+.timeline-label span{font-size:.9rem;line-height:1.32;color:#f0f2fa}
+.timeline-label strong{font-size:1.3rem;line-height:1.12}
+.timeline-label-center strong{font-size:.98rem;color:#fff}
+.pattern-arc{margin-top:2px}
+.arc-base{stroke-width:7.5}
+.arc-extension{stroke-width:6.5;stroke-dasharray:2 14}
+.arc-marker{stroke-width:3}
+.arc-today-halo{fill:rgba(255,255,255,.18)}
+.hero-explainer{margin:-6px auto 0;max-width:620px;font-size:.97rem;color:#f0f2fb;text-shadow:0 4px 18px rgba(0,0,0,.98)}
+.home-content{padding-top:20px}
+.card{
+  border:1px solid #2d3555;
+  background:linear-gradient(145deg,rgba(17,22,42,.98),rgba(10,14,29,.98));
+  box-shadow:0 18px 50px rgba(0,0,0,.38);
+}
+.checkin-card,.prediction-card,.safety-card{border-color:#2d3555}
+.safety-card{border-left:1px solid #2d3555}
+.safety-card strong{display:block;font-size:1rem;margin-bottom:8px}
+.safety-card p{margin:0}
+.home-content .start-card{display:none}
+.bottom-nav{z-index:95}
+
+@media(max-width:520px){
+  .pattern-hero{min-height:585px;background-position:center top}
+  .pattern-content{padding:34px 18px 30px}
+  .timeline-stage{padding-top:102px}
+  .timeline-label{top:20px;width:30%}
+  .timeline-label-left{left:0}
+  .timeline-label-center{left:35%;width:30%}
+  .timeline-label-right{right:0}
+  .timeline-label span{font-size:.76rem}
+  .timeline-label strong{font-size:1.08rem}
+  .timeline-label-center strong{font-size:.86rem}
+  .hero-explainer{font-size:.86rem;line-height:1.55;margin-top:-3px}
+  .home-content{padding-top:16px}
+}

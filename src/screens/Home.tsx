@@ -15,13 +15,11 @@ function confidenceLabel(value: PredictionResult['confidence']) {
 export function Home({
   logs,
   prediction,
-  onLog,
-  onOpenCalendar
+  onLog
 }: {
   logs: DailyPmsLog[];
   prediction: PredictionResult;
   onLog: (date: string, value?: PmsLogValue) => void;
-  onOpenCalendar: () => void;
 }) {
   const today = todayLocal();
   const current = logs.find((log) => log.date === today)?.value;
@@ -35,10 +33,6 @@ export function Home({
   return (
     <main className="home-screen">
       <section className="pattern-hero" aria-labelledby="pattern-overview-title">
-        <div className="aurora-layer aurora-violet" aria-hidden="true" />
-        <div className="aurora-layer aurora-blue" aria-hidden="true" />
-        <div className="aurora-layer aurora-glow" aria-hidden="true" />
-
         <div className="pattern-content">
           <p className="hero-kicker" id="pattern-overview-title">Your pattern overview</p>
 
@@ -47,38 +41,41 @@ export function Home({
             <strong>{formatDate(today, { weekday: 'long', day: 'numeric', month: 'long' })}</strong>
           </div>
 
-          <div className="timeline-stage" aria-label={`Last PMS-like symptoms: ${lastLabel}. Today: ${formatDate(today, { day: 'numeric', month: 'long' })}. Next possible window: ${nextLabel}.`}>
+          <div
+            className="timeline-stage"
+            aria-label={`Last PMS-like symptoms: ${lastLabel}. Today: ${formatDate(today, { day: 'numeric', month: 'long' })}. Next possible window: ${nextLabel}.`}
+          >
             <div className="timeline-label timeline-label-left">
-              <span>Last PMS-like symptoms</span>
+              <span>Last PMS-like<br />symptoms</span>
               <strong>{lastLabel}</strong>
             </div>
             <div className="timeline-label timeline-label-center">
-              <span>Today</span>
+              <strong>Today</strong>
             </div>
             <div className="timeline-label timeline-label-right">
               <span>Next possible window</span>
               <strong>{nextLabel}</strong>
             </div>
 
-            <svg className="pattern-arc" viewBox="0 0 640 230" role="img" aria-hidden="true">
+            <svg className="pattern-arc" viewBox="0 0 700 260" role="img" aria-hidden="true">
               <defs>
                 <linearGradient id="arcGradient" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stopColor="#a57aff" />
-                  <stop offset="0.5" stopColor="#e5e4ff" />
-                  <stop offset="1" stopColor="#6cc5ff" />
+                  <stop offset="0" stopColor="#a876ff" />
+                  <stop offset="0.5" stopColor="#f0edff" />
+                  <stop offset="1" stopColor="#69c8ff" />
                 </linearGradient>
-                <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="7" result="blur" />
+                <filter id="todayGlow" x="-100%" y="-100%" width="300%" height="300%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
                   <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
-              <path className="arc-extension arc-extension-left" d="M46 196 L82 164" />
-              <path className="arc-base" d="M82 164 Q320 -16 558 164" />
-              <path className="arc-extension arc-extension-right" d="M558 164 L594 196" />
-              <circle className="arc-marker arc-marker-left" cx="46" cy="196" r="8" />
-              <circle className="arc-marker arc-marker-right" cx="594" cy="196" r="8" />
-              <circle className="arc-today-halo" cx="320" cy="38" r="25" />
-              <circle className="arc-today" cx="320" cy="38" r="13" filter="url(#softGlow)" />
+              <path className="arc-extension" d="M50 222 L98 182" />
+              <path className="arc-base" d="M98 182 Q350 -10 602 182" />
+              <path className="arc-extension" d="M602 182 L650 222" />
+              <circle className="arc-marker arc-marker-left" cx="50" cy="222" r="10" />
+              <circle className="arc-marker arc-marker-right" cx="650" cy="222" r="10" />
+              <circle className="arc-today-halo" cx="350" cy="47" r="27" />
+              <circle className="arc-today" cx="350" cy="47" r="14" filter="url(#todayGlow)" />
             </svg>
           </div>
 
@@ -120,10 +117,7 @@ export function Home({
             )}
           </div>
 
-          <p className="device-privacy-note">
-            <span className="privacy-lock" aria-hidden="true">⌑</span>
-            Entries stay in this browser on this device.
-          </p>
+          <p className="device-privacy-note">Entries stay in this browser on this device.</p>
         </section>
 
         <section className="prediction-card card" aria-labelledby="prediction-title">
@@ -160,15 +154,6 @@ export function Home({
             </div>
             <div><dt>PMS days</dt><dd>{prediction.totalPmsDays}</dd></div>
           </dl>
-        </section>
-
-        <section className="start-card card">
-          <div>
-            <p className="eyebrow">Add your history</p>
-            <h2>Retroactive entries improve the forecast</h2>
-            <p className="muted">Tap past dates or add a complete historical symptom range from the calendar.</p>
-          </div>
-          <button className="secondary-button" onClick={onOpenCalendar}>Open calendar</button>
         </section>
 
         <section className="safety-card card">

@@ -73,27 +73,28 @@ export function Home({
               </defs>
               <path className="arc-base" d="M98 182 Q350 -10 602 182" />
               <g className="arc-extension-dots arc-extension-dots-left">
-                <circle cx="58" cy="216" r="3.8" />
-                <circle cx="69" cy="207" r="3.8" />
-                <circle cx="80" cy="198" r="3.8" />
-                <circle cx="91" cy="189" r="3.8" />
+                <circle cx="67" cy="208" r="3.2" />
+                <circle cx="76" cy="201" r="3.2" />
+                <circle cx="85" cy="194" r="3.2" />
+                <circle cx="94" cy="187" r="3.2" />
               </g>
               <g className="arc-extension-dots arc-extension-dots-right">
-                <circle cx="609" cy="189" r="3.8" />
-                <circle cx="620" cy="198" r="3.8" />
-                <circle cx="631" cy="207" r="3.8" />
-                <circle cx="642" cy="216" r="3.8" />
+                <circle cx="606" cy="187" r="3.2" />
+                <circle cx="615" cy="194" r="3.2" />
+                <circle cx="624" cy="201" r="3.2" />
+                <circle cx="633" cy="208" r="3.2" />
               </g>
-              <circle className="arc-marker arc-marker-left" cx="50" cy="222" r="10" />
-              <circle className="arc-marker arc-marker-right" cx="650" cy="222" r="10" />
-              <circle className="arc-today-halo" cx="350" cy="86" r="27" />
-              <circle className="arc-today" cx="350" cy="86" r="14" filter="url(#todayGlow)" />
+              <circle className="arc-marker arc-marker-left" cx="58" cy="215" r="9" />
+              <circle className="arc-marker arc-marker-right" cx="642" cy="215" r="9" />
+              <circle className="arc-today-halo" cx="350" cy="86" r="22" />
+              <circle className="arc-today" cx="350" cy="86" r="12" filter="url(#todayGlow)" />
             </svg>
           </div>
 
-          <p className="hero-explainer">
-            Lynera estimates recurring timing from your own symptom history. It does not identify a menstrual phase or make a diagnosis.
-          </p>
+          <div className="hero-confidence" aria-label={`Prediction confidence ${prediction.reliability} percent`}>
+            <span>Prediction confidence</span>
+            <strong>{prediction.reliability}%</strong>
+          </div>
         </div>
       </section>
 

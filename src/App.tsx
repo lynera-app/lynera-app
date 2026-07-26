@@ -21,7 +21,7 @@ export default function App(){
  const onRange=async(s:string,e:string)=>{await saveRange(s,e,'pms');setLogs(await getAllLogs())};
  if(!ready)return <div className="loading"><img src="./icons/icon-192.png" alt=""/><span>Opening Lynera…</span></div>;
  if(!onboarded)return <Onboarding onFinish={()=>{void setSetting('onboarded',true);setOnboarded(true)}}/>;
- return <div className="app-shell"><header className="topbar"><button className="brand" onClick={()=>setScreen('home')} aria-label="Go to Today"><img src="./icons/icon-64.png" alt=""/><strong>LYNERA</strong></button><span className="device-badge"><i/>On-device</span></header>
+ return <div className="app-shell"><header className="topbar"><button className="brand" onClick={()=>setScreen('home')} aria-label="Go to Today"><img src="./icons/icon-64.png" alt=""/><strong>LYNERA</strong></button></header>
  {screen==='home'&&<Home logs={logs} prediction={prediction} onLog={onLog} onOpenCalendar={()=>setScreen('calendar')}/>} {screen==='calendar'&&<CalendarScreen logs={logs} prediction={prediction} onLog={onLog} onRange={onRange}/>} {screen==='insights'&&<Insights prediction={prediction}/>} {screen==='privacy'&&<Privacy logs={logs} onDeleteAll={async()=>{await deleteAllData();setLogs([]);setOnboarded(false)}}/>}
  <nav className="bottom-nav" aria-label="Primary navigation">{nav.map(([id,label,icon])=><button key={id} onClick={()=>setScreen(id)} className={screen===id?'active':''} aria-current={screen===id?'page':undefined}><Icon name={icon}/><span>{label}</span></button>)}</nav></div>
 }

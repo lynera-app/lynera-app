@@ -1,58 +1,50 @@
-# Update the existing Lynera GitHub app
+# Updating Lynera on GitHub
 
-This package changes only the visual interface and build configuration. It does not alter or delete locally stored PMS-like symptom entries.
+## Before copying the patch
+1. Open GitHub Desktop and select the existing `lynera-app` repository.
+2. Click **Fetch origin**.
+3. If **Pull origin** appears, click it and wait for the local `main` branch to finish syncing.
+4. Close Lynera on the iPhone while updating.
 
-## Files changed
+## Apply the patch
+1. Download and unzip `lynera-home-update-patch.zip`.
+2. Open the extracted patch folder and the existing local project folder side by side.
+3. Copy everything inside the patch folder into the project root.
+4. Choose **Replace files in the destination** when Windows asks.
+5. Preserve the folder structure. For example, `src/screens/Home.tsx` must replace that exact file—not create a second nested project folder.
 
-Replace these files in the existing GitHub repository:
-
+The patch changes:
 - `src/App.tsx`
 - `src/screens/Home.tsx`
-- `src/styles.css`
 - `src/components/Icons.tsx`
-- `src/vite-env.d.ts` (new if it is not already present)
-- `tsconfig.node.json`
+- `src/styles.css`
+- `public/sw.js`
+- `UPDATE_GITHUB.md`
 
-The existing Lynera icon files stay unchanged.
+## Commit and push
+1. Return to GitHub Desktop.
+2. Review the changed files.
+3. Use the summary: `Polish Lynera home screen`.
+4. Click **Commit to main**.
+5. Click **Push origin**.
 
-## Recommended method: GitHub Desktop
+## Verify GitHub Actions
+1. Open the repository on GitHub.
+2. Open **Actions**.
+3. Select the newest **Deploy Lynera to GitHub Pages** run.
+4. Confirm the `build` job passes `npm test` and `npm run build`.
+5. Confirm the `deploy` job also finishes with a green check.
+6. If a step fails, open that step and copy its final error lines before changing files again.
 
-1. Download and unzip the update package.
-2. Open the local `lynera-app` repository folder on your computer.
-3. Copy the files from the update package into the matching locations in that folder.
-4. Choose **Replace** when prompted.
-5. Open GitHub Desktop.
-6. Confirm the changed files listed above appear under **Changes**.
-7. Enter the summary: `Refresh Lynera home design`.
-8. Select **Commit to main**.
-9. Select **Push origin**.
-10. Open the repository on GitHub and select **Actions**.
-11. Wait for **Deploy Lynera to GitHub Pages** to finish with a green check mark.
+## Refresh the installed iPhone web app
+The service-worker cache was changed to `lynera-v2` so the new version can replace the old one.
 
-## Browser-only method
+1. Keep the iPhone online.
+2. Open the GitHub Pages URL in Safari and refresh once.
+3. Leave it open for about 10 seconds.
+4. Close Safari.
+5. Fully close Lynera from the iPhone app switcher.
+6. Reopen Lynera from the Home Screen.
+7. If the previous design remains, repeat the Safari refresh and reopen Lynera once more.
 
-For each changed file:
-
-1. Open the file in the GitHub repository.
-2. Select the pencil icon.
-3. Replace its complete contents with the matching file from this package.
-4. Select **Commit changes**.
-
-For the new `src/vite-env.d.ts` file, use **Add file → Create new file** and enter:
-
-```ts
-/// <reference types="vite/client" />
-```
-
-Multiple commits will each start a deployment. It is easier to upload all changed files at once or use GitHub Desktop.
-
-## Refresh the installed iPhone app
-
-After the GitHub Action succeeds:
-
-1. Open Lynera from the Home Screen while connected to the internet.
-2. Leave it open for about 10 seconds.
-3. Close it fully from the app switcher.
-4. Open it again.
-
-If the old design remains, open the GitHub Pages URL in Safari, refresh it once, then close and reopen the Home Screen app. Your locally stored entries should remain intact as long as the URL has not changed and Safari website data has not been cleared.
+Do not change the GitHub Pages URL. Keeping the same URL preserves the IndexedDB storage location used by existing logs.

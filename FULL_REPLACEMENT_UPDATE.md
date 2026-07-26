@@ -1,13 +1,11 @@
-# Lynera v9 full replacement
+# Lynera v10 spacing refinement
 
-This version fixes the Calendar bottom sheets and refines the approved home-screen layout.
+This release only adjusts the four spacing areas requested on the Home screen:
 
-## Changes
-- Calendar day and historical-range sheets now sit above the bottom navigation, remain scrollable, and keep every action reachable on large iPhones.
-- Background scrolling is locked while a sheet is open.
-- Today, past-symptom, and next-window labels are positioned near their corresponding arc markers.
-- Arc extension dots are evenly spaced and aligned with the large endpoint markers.
-- More of the lake and reflection remains visible in the Home hero.
-- The Lynera mark in the header uses a transparent background while preserving the same crescent-and-wave artwork.
-- The logo row is moved slightly lower beneath the safe-area fade.
-- PWA cache updated to `lynera-v9`.
+- Side timeline labels are 20% closer to their endpoint markers.
+- The centre Today label is 27% closer to the centre marker.
+- The date-to-timeline group spacing is reduced by 15%.
+- The lake-to-check-in gap is reduced by approximately 50%, while retaining the lake reflection.
+- The PWA cache is updated to `lynera-v10`.
+
+No data model, prediction, calendar, privacy, export, or logging behaviour was changed.

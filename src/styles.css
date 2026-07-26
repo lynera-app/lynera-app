@@ -563,3 +563,40 @@ body{background:#050713}
     padding-bottom:calc(38px + env(safe-area-inset-bottom));
   }
 }
+
+/* Lynera precision spacing refinement v10 */
+.pattern-hero{
+  min-height:680px;
+}
+.timeline-stage{
+  margin-top:-14px;
+}
+.timeline-label-left,
+.timeline-label-right{
+  top:124px;
+}
+.timeline-label-center{
+  top:80px;
+}
+.hero-confidence{
+  margin-top:32px;
+}
+
+@media(max-width:520px){
+  .pattern-hero{
+    min-height:650px;
+  }
+  .timeline-stage{
+    margin-top:-14px;
+  }
+  .timeline-label-left,
+  .timeline-label-right{
+    top:118px;
+  }
+  .timeline-label-center{
+    top:77px;
+  }
+  .hero-confidence{
+    margin-top:29px;
+  }
+}

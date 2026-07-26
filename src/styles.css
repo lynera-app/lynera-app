@@ -352,3 +352,100 @@ body{background:#050713}
   .hero-confidence span,.hero-confidence strong{font-size:.76rem}
   .home-content{padding-top:6px}
 }
+
+/* Lynera final alignment refinement v8 */
+.topbar{
+  padding-top:calc(env(safe-area-inset-top) + 12px);
+  padding-bottom:10px;
+}
+.pattern-content{
+  padding-top:34px;
+  padding-bottom:30px;
+}
+.hero-kicker{
+  margin-bottom:28px;
+}
+.hero-today{
+  margin-bottom:34px;
+}
+.timeline-stage{
+  padding-top:86px;
+}
+.timeline-label{
+  top:44px;
+  gap:5px;
+}
+.timeline-label-left,
+.timeline-label-right{
+  top:104px;
+}
+.timeline-label-center{
+  top:38px;
+}
+.pattern-arc{
+  margin-top:0;
+}
+.arc-extension-dots circle{
+  r:3.2px;
+}
+.arc-marker{
+  stroke-width:2.6;
+}
+.hero-confidence{
+  margin:10px auto 0;
+}
+.home-content{
+  padding-top:22px;
+}
+.checkin-card h1,
+.prediction-header h2{
+  font-size:clamp(1.75rem,5.9vw,2.35rem);
+}
+.device-privacy-note{
+  font-size:.8rem;
+}
+
+@media(max-width:520px){
+  .topbar{
+    padding-top:calc(env(safe-area-inset-top) + 11px);
+    padding-bottom:9px;
+  }
+  .pattern-content{
+    padding:31px 18px 26px;
+  }
+  .hero-kicker{
+    margin-bottom:25px;
+  }
+  .hero-today{
+    margin-bottom:31px;
+  }
+  .timeline-stage{
+    padding-top:82px;
+  }
+  .timeline-label{
+    top:41px;
+  }
+  .timeline-label-left,
+  .timeline-label-right{
+    top:96px;
+  }
+  .timeline-label-center{
+    top:35px;
+  }
+  .timeline-label-left{
+    left:1px;
+  }
+  .timeline-label-right{
+    right:1px;
+  }
+  .hero-confidence{
+    margin-top:11px;
+  }
+  .home-content{
+    padding-top:20px;
+  }
+  .checkin-card h1,
+  .prediction-header h2{
+    font-size:1.8rem;
+  }
+}

@@ -72,19 +72,19 @@ export function Home({
               </defs>
               <path className="arc-base" d="M110 182 Q350 -5 590 182" />
               <g className="arc-extension-dots arc-extension-dots-left">
-                <circle cx="70" cy="214" r="3.2" />
-                <circle cx="80" cy="206" r="3.2" />
-                <circle cx="90" cy="198" r="3.2" />
-                <circle cx="100" cy="190" r="3.2" />
+                <circle cx="76" cy="211" r="3.2" />
+                <circle cx="86" cy="202" r="3.2" />
+                <circle cx="96" cy="193" r="3.2" />
+                <circle cx="106" cy="184" r="3.2" />
               </g>
               <g className="arc-extension-dots arc-extension-dots-right">
-                <circle cx="600" cy="190" r="3.2" />
-                <circle cx="610" cy="198" r="3.2" />
-                <circle cx="620" cy="206" r="3.2" />
-                <circle cx="630" cy="214" r="3.2" />
+                <circle cx="594" cy="184" r="3.2" />
+                <circle cx="604" cy="193" r="3.2" />
+                <circle cx="614" cy="202" r="3.2" />
+                <circle cx="624" cy="211" r="3.2" />
               </g>
-              <circle className="arc-marker arc-marker-left" cx="50" cy="222" r="9" />
-              <circle className="arc-marker arc-marker-right" cx="650" cy="222" r="9" />
+              <circle className="arc-marker arc-marker-left" cx="64" cy="222" r="9" />
+              <circle className="arc-marker arc-marker-right" cx="636" cy="222" r="9" />
               <circle className="arc-today-halo" cx="350" cy="89" r="20" />
               <circle className="arc-today" cx="350" cy="89" r="11" filter="url(#todayGlow)" />
             </svg>
@@ -129,7 +129,7 @@ export function Home({
             )}
           </div>
 
-          <p className="device-privacy-note">Entries stay in this browser on this device.</p>
+          <p className="device-privacy-note">Entries stay on this device.</p>
         </section>
 
         <section className="prediction-card card" aria-labelledby="prediction-title">

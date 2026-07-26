@@ -278,3 +278,77 @@ body{background:#050713}
   .hero-confidence strong{font-size:.95rem}
   .checkin-card{margin-top:12px}
 }
+
+/* Lynera final home spacing and safe-area refinement v7 */
+:root{--home-display-size:clamp(2rem,6.6vw,2.75rem)}
+.app-shell::before{
+  top:0;
+  height:calc(max(env(safe-area-inset-top),18px) + 34px);
+  background:linear-gradient(180deg,rgba(5,8,24,.82) 0%,rgba(5,8,24,.72) 34%,rgba(5,8,24,.38) 70%,rgba(5,8,24,0) 100%);
+  -webkit-backdrop-filter:blur(14px) saturate(.82) brightness(.74);
+  backdrop-filter:blur(14px) saturate(.82) brightness(.74);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 42%,rgba(0,0,0,.65) 72%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 42%,rgba(0,0,0,.65) 72%,transparent 100%);
+}
+.topbar{
+  min-height:68px;
+  padding:calc(env(safe-area-inset-top) + 4px) 20px 8px;
+  background:linear-gradient(180deg,rgba(7,9,24,.72),rgba(7,9,24,.26) 76%,rgba(7,9,24,0));
+}
+.pattern-hero{
+  min-height:0;
+  background-image:
+    linear-gradient(180deg,rgba(7,9,24,.48) 0%,rgba(7,9,24,.16) 9%,rgba(4,6,22,.08) 47%,rgba(4,6,22,.18) 72%,rgba(5,7,19,.78) 91%,#050713 100%),
+    var(--aurora-image);
+  background-position:center top;
+}
+.pattern-content{padding:26px 20px 15px}
+.hero-kicker{margin-bottom:16px}
+.hero-today{margin-bottom:5px}
+.hero-today strong,
+.checkin-card h1,
+.prediction-header h2{
+  font-size:var(--home-display-size);
+  line-height:1.08;
+  letter-spacing:-.045em;
+}
+.timeline-stage{padding-top:48px;margin-top:0}
+.timeline-label{top:3px;gap:4px}
+.timeline-label-center{top:3px}
+.timeline-label span{line-height:1.24}
+.timeline-label strong{line-height:1.06}
+.pattern-arc{margin-top:-10px}
+.arc-extension-dots circle{filter:drop-shadow(0 0 2px rgba(168,118,255,.25))}
+.arc-extension-dots-right circle{filter:drop-shadow(0 0 2px rgba(105,200,255,.25))}
+.arc-today-halo{fill:rgba(255,255,255,.10)}
+.hero-confidence{
+  margin:-24px auto 0;
+  padding:7px 13px;
+  gap:8px;
+}
+.hero-confidence span,
+.hero-confidence strong{
+  font-size:.78rem;
+  line-height:1;
+}
+.hero-confidence strong{font-weight:700}
+.home-content{padding-top:7px}
+.checkin-card{margin-top:0}
+
+@media(max-width:520px){
+  :root{--home-display-size:2.05rem}
+  .topbar{min-height:66px;padding:calc(env(safe-area-inset-top) + 3px) 20px 7px}
+  .pattern-content{padding:22px 18px 13px}
+  .hero-kicker{margin-bottom:14px}
+  .hero-today{margin-bottom:3px}
+  .timeline-stage{padding-top:44px}
+  .timeline-label{top:1px}
+  .timeline-label-center{top:1px}
+  .timeline-label span{font-size:.74rem}
+  .timeline-label strong{font-size:1.02rem}
+  .timeline-label-center strong{font-size:.86rem}
+  .pattern-arc{margin-top:-10px}
+  .hero-confidence{margin-top:-22px;padding:7px 12px}
+  .hero-confidence span,.hero-confidence strong{font-size:.76rem}
+  .home-content{padding-top:6px}
+}

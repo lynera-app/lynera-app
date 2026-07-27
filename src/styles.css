@@ -643,3 +643,29 @@ body{background:#050713}
     padding-top:3px;
   }
 }
+
+
+/* Lynera final check-in position refinement v12 */
+.home-content{
+  position:relative;
+  margin-top:-22px;
+}
+.device-privacy-note{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+}
+.device-lock-icon{
+  width:17px;
+  height:17px;
+  flex:0 0 auto;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+@media(max-width:520px){
+  .home-content{margin-top:-20px}
+}

@@ -805,3 +805,24 @@ body{background:#050713}
     margin-top:-96px;
   }
 }
+
+
+/* Lynera balanced hero-group refinement v16
+   Keeps the overview heading, date, and check-in card fixed. Moves only the
+   timeline/confidence group slightly upward and raises the aurora image so
+   the central horizon remains visible above the confidence pill. */
+.pattern-hero{
+  background-position:center 52%;
+}
+.timeline-stage{
+  margin-top:-60px;
+}
+
+@media(max-width:520px){
+  .pattern-hero{
+    background-position:center 54%;
+  }
+  .timeline-stage{
+    margin-top:-59px;
+  }
+}

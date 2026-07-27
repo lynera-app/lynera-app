@@ -740,3 +740,28 @@ body{background:#050713}
     padding-top:0;
   }
 }
+
+/* Lynera final grouped-position refinement v14
+   Keeps the pattern heading and date fixed while moving the timeline group,
+   aurora image and following cards upward by the requested amounts. */
+.pattern-hero{
+  background-position:center 64%;
+}
+.timeline-stage{
+  margin-top:-30px;
+}
+.home-content{
+  margin-top:-49px;
+}
+
+@media(max-width:520px){
+  .pattern-hero{
+    background-position:center 66%;
+  }
+  .timeline-stage{
+    margin-top:-30px;
+  }
+  .home-content{
+    margin-top:-48px;
+  }
+}

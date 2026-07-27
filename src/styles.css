@@ -882,7 +882,7 @@ body{background:#050713}
   position:absolute !important;
   z-index:-2 !important;
   left:50% !important;
-  top:72px !important;
+  top:24px !important;
   width:100% !important;
   max-width:none !important;
   height:auto !important;
@@ -898,7 +898,7 @@ body{background:#050713}
 }
 @media(max-width:520px){
   .pattern-background-image{
-    top:142px !important;
+    top:48px !important;
     width:100% !important;
     height:auto !important;
   }

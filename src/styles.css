@@ -669,3 +669,74 @@ body{background:#050713}
 @media(max-width:520px){
   .home-content{margin-top:-20px}
 }
+
+/* Lynera corrected preview-aligned layout v13
+   Restores the complete approved preview spacing, then applies the final
+   additional 10% upward movement of the daily check-in section. */
+.pattern-hero{
+  min-height:575px;
+  background-position:center 68%;
+}
+.pattern-content{
+  padding-top:42px;
+  padding-bottom:34px;
+}
+.hero-kicker{
+  margin-bottom:34px;
+}
+.hero-today{
+  margin-bottom:38px;
+}
+.timeline-stage{
+  padding-top:96px;
+  margin-top:-14px;
+}
+.timeline-label-left,
+.timeline-label-right{
+  top:101px;
+}
+.timeline-label-center{
+  top:80px;
+}
+.hero-confidence{
+  margin-top:20px;
+}
+.home-content{
+  position:relative;
+  margin-top:-42px;
+  padding-top:0;
+}
+
+@media(max-width:520px){
+  .pattern-hero{
+    min-height:555px;
+    background-position:center 70%;
+  }
+  .pattern-content{
+    padding:38px 18px 32px;
+  }
+  .hero-kicker{
+    margin-bottom:31px;
+  }
+  .hero-today{
+    margin-bottom:35px;
+  }
+  .timeline-stage{
+    padding-top:92px;
+    margin-top:-14px;
+  }
+  .timeline-label-left,
+  .timeline-label-right{
+    top:99px;
+  }
+  .timeline-label-center{
+    top:79px;
+  }
+  .hero-confidence{
+    margin-top:19px;
+  }
+  .home-content{
+    margin-top:-40px;
+    padding-top:0;
+  }
+}

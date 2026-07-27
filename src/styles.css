@@ -868,3 +868,38 @@ body{background:#050713}
     height:calc(100% + 145px);
   }
 }
+
+/* Lynera deterministic horizon placement v21.
+   This intentionally overrides every earlier background-position rule.
+   The source image is rendered at the hero's exact width without cover-cropping,
+   then positioned with a fixed top offset. This makes the mountain/lake horizon
+   land above the confidence pill on large iPhones. The mask softly fades the
+   image into the dark header and lower background. */
+.pattern-hero{
+  background-image:none !important;
+}
+.pattern-background-image{
+  position:absolute !important;
+  z-index:-2 !important;
+  left:50% !important;
+  top:72px !important;
+  width:100% !important;
+  max-width:none !important;
+  height:auto !important;
+  min-height:0 !important;
+  transform:translateX(-50%) !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+  opacity:1 !important;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.45) 42px,#000 118px,#000 88%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.45) 42px,#000 118px,#000 88%,transparent 100%);
+  pointer-events:none;
+  user-select:none;
+}
+@media(max-width:520px){
+  .pattern-background-image{
+    top:142px !important;
+    width:100% !important;
+    height:auto !important;
+  }
+}

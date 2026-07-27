@@ -765,3 +765,43 @@ body{background:#050713}
     margin-top:-48px;
   }
 }
+
+/* Lynera final grouped spacing refinement v15
+   Keeps the overview heading and date fixed. Moves the timeline/background
+   group upward, tightens each label to its marker, and pulls following cards
+   upward while preserving the approved design. */
+.pattern-hero{
+  background-position:center 58%;
+}
+.timeline-stage{
+  margin-top:-48px;
+}
+.timeline-label-left,
+.timeline-label-right{
+  top:113px;
+}
+.timeline-label-center{
+  top:90px;
+}
+.home-content{
+  margin-top:-99px;
+}
+
+@media(max-width:520px){
+  .pattern-hero{
+    background-position:center 60%;
+  }
+  .timeline-stage{
+    margin-top:-47px;
+  }
+  .timeline-label-left,
+  .timeline-label-right{
+    top:111px;
+  }
+  .timeline-label-center{
+    top:89px;
+  }
+  .home-content{
+    margin-top:-96px;
+  }
+}

@@ -1,4 +1,4 @@
-const CACHE = 'lynera-v14';
+const CACHE = 'lynera-v15';
 const base = new URL('./', self.location.href).pathname;
 const core = [base, `${base}manifest.webmanifest`, `${base}icons/icon-192.png`, `${base}icons/icon-512.png`, `${base}icons/apple-touch-icon.png`];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(core)).then(() => self.skipWaiting())));

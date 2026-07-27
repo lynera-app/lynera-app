@@ -903,3 +903,26 @@ body{background:#050713}
     height:auto !important;
   }
 }
+
+/* Lynera horizon placement v23.
+   Keep all foreground layout unchanged. Raise only the dedicated aurora image
+   layer so the centre lake horizon sits between the arc's Today marker and the
+   prediction-confidence pill. The longer top mask creates a soft fade behind
+   the upper hero instead of a hard image edge. */
+.pattern-background-image{
+  top:-70px !important;
+  width:100% !important;
+  height:auto !important;
+  transform:translateX(-50%) !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.16) 110px,rgba(0,0,0,.62) 190px,#000 270px,#000 89%,transparent 100%) !important;
+  mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.16) 110px,rgba(0,0,0,.62) 190px,#000 270px,#000 89%,transparent 100%) !important;
+}
+@media(max-width:520px){
+  .pattern-background-image{
+    top:-70px !important;
+    width:100% !important;
+    height:auto !important;
+  }
+}

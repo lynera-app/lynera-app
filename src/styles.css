@@ -838,3 +838,33 @@ body{background:#050713}
     background-position:center 72%;
   }
 }
+
+
+/* Lynera deterministic aurora positioning v19.
+   The source image is portrait-oriented and, with background-size: cover,
+   has no vertical overflow in this hero. That made background-position-y a
+   no-op. Render it as a separate oversized layer so its vertical offset is
+   explicit and reliable across iPhone/PWA layouts. */
+.pattern-hero{
+  background-image:none;
+}
+.pattern-background-image{
+  position:absolute;
+  z-index:-2;
+  top:-95px;
+  left:50%;
+  width:116%;
+  height:calc(100% + 150px);
+  transform:translateX(-50%);
+  object-fit:cover;
+  object-position:center;
+  pointer-events:none;
+  user-select:none;
+}
+@media(max-width:520px){
+  .pattern-background-image{
+    top:-92px;
+    width:118%;
+    height:calc(100% + 145px);
+  }
+}

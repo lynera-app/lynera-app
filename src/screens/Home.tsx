@@ -35,6 +35,7 @@ export function Home({
   return (
     <main className="home-screen">
       <section className="pattern-hero" style={{ '--aurora-image': `url(${auroraHome})` } as CSSProperties} aria-labelledby="pattern-overview-title">
+        <img className="pattern-background-image" src={auroraHome} alt="" aria-hidden="true" />
         <div className="pattern-content">
           <p className="hero-kicker" id="pattern-overview-title">Your pattern overview</p>
 

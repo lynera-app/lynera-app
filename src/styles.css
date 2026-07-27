@@ -827,13 +827,14 @@ body{background:#050713}
   }
 }
 
-/* Lynera final background-only adjustment v17.
-   Raises only the aurora/lake image by approximately 15%; no content positions change. */
+/* Lynera background-position correction v18.
+   Moves only the existing aurora/lake image upward so the central horizon is
+   clearly visible between the arc and the prediction-confidence pill. */
 .pattern-hero{
-  background-position:center 44%;
+  background-position:center 70%;
 }
 @media(max-width:520px){
   .pattern-hero{
-    background-position:center 46%;
+    background-position:center 72%;
   }
 }
